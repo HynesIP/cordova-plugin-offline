@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+    id="org.apache.cordova.offline"
+    version="0.0.1">
+    <name>Offline</name>
+    <description>Offline Plugin</description>
+    <license>Apache 2.0</license>
+    <keywords>offline url</keywords>
+    <repo>https://github.com/andrewreedy/cordova-plugin-offline.git</repo>
+    <issue>https://github.com/andrewreedy/cordova-plugin-offline/issues</issue>
+
+    <!-- ios -->
+    <platform name="ios">
+        <config-file target="config.xml" parent="/*">
+            <feature name="Offline">
+                <param name="ios-package" value="Offline" />
+            </feature>
+        </config-file>
+
+        <js-module src="www/ios/offline.js" name="offline">
+          <clobbers target="cordova.plugins.Offline" />
+        </js-module>
+
+        <header-file src="src/ios/Offline.h" />
+        <source-file src="src/ios/Offline.m" />
+    </platform>
+
+</plugin>
